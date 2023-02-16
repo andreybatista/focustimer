@@ -50,14 +50,16 @@ export function CyclesContextProvider({
         '@andrey-timer:cycles-state-1.0.0',
       )
 
-      console.log(storedStateAsJSON)
-
       if (storedStateAsJSON) {
         return JSON.parse(storedStateAsJSON)
+      } else {
+        return {
+          cycles: [],
+          activeCycleId: null,
+        }
       }
     },
   )
-
   const { cycles, activeCycleId } = cyclesState
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
