@@ -50,6 +50,8 @@ export function CyclesContextProvider({
         '@andrey-timer:cycles-state-1.0.0',
       )
 
+      console.log(storedStateAsJSON)
+
       if (storedStateAsJSON) {
         return JSON.parse(storedStateAsJSON)
       }
